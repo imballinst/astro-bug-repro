@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function Counter({ children, count: initialCount }) {
+export default function Counter({ children, count: initialCount, date }) {
   const [count, setCount] = useState(initialCount);
   const add = () => setCount((i) => i + 1);
   const subtract = () => setCount((i) => i - 1);
@@ -13,6 +13,7 @@ export default function Counter({ children, count: initialCount }) {
         <button onClick={add}>+</button>
       </div>
       <div className="children">{children}</div>
+      <div>{date.toISOString()}</div>
     </>
   );
 }
